@@ -1,0 +1,12 @@
+
+<h1>Welcome to my online shop</h1>
+
+<h2>Products list</h2>
+<table>
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= link_to(product.name, product_path(product)) %></td>
+      <td>$ <%= product.price %></td>
+    </tr>
+    <% end %>
+</table>
