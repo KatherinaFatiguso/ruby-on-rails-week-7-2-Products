@@ -1,0 +1,11 @@
+<h2>Create a new product</h3>
+  <%= form_for @product do |item| %>
+    <h3>Enter item name:</h3>
+    <%= item.text_field :name %>
+    <h3>Enter item price:</h3>
+    <%= item.text_field :price %>
+    <br><br><br>
+    <%= item.submit %>
+  <% end %>
+
+  <% link_to("Back to Index", products_path) %>

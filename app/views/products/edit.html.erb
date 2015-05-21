@@ -1,0 +1,9 @@
+<h1>Editing <%= @product.name%> </h1>
+<%= form_for @product do |item| %>
+  <h3>Product Name: <%= item.text_field :name %> </h3>
+  <h3>Product Price: <%= number_to_currency(item.text_field :price) %>
+  <%= item.submit%>
+  <% end %>
+
+<br>
+<%= link_to('Back to Index', products_path)%>

@@ -2,7 +2,9 @@
 
 <div class="product_<%= @product.name %>">
   <h1><%= @product.name %></h1>
-  <h2>$ <%= @product.price %></h2>
+  <h2><%= number_to_currency(@product.price) %></h2>
 
+  <%= link_to('Edit', edit_product_path) %>
+  <br>
   <%= link_to('Index', products_path) %>
 </div>
