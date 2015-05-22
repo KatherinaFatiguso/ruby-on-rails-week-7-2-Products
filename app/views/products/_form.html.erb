@@ -1,0 +1,7 @@
+<%= form_for @product do |item| %>
+  <h3>Product Name: <%= item.text_field :name %> </h3>
+  <h3>Product Price $ <%= item.text_field :price %> </h3>
+  <br>
+  <%= item.submit%>
+  <br>
+<% end %>

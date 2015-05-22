@@ -13,13 +13,13 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-
   def index
     @products = Product.all
   end
 
   def show
     #find_product
+    @product.increment!(:views) #to keep a track of our views of products
   end
 
   def new
@@ -43,7 +43,7 @@ class ProductsController < ApplicationController
   def update
     #find_product
     if @product.update_attributes(product_params)
-      redirect_to products_url
+      redirect_to product_url(@product), notice: 'Updated product'
     else
       render :edit
     end

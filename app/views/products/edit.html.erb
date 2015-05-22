@@ -1,9 +1,14 @@
-<h1>Editing <%= @product.name%> </h1>
-<%= form_for @product do |item| %>
-  <h3>Product Name: <%= item.text_field :name %> </h3>
-  <h3>Product Price: <%= number_to_currency(item.text_field :price) %>
-  <%= item.submit%>
-  <% end %>
+<% if @product.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+      <% @product.errors.full_messages.each do |msg|%>
+      <p><%= msg %></p>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
+<h1>Editing Product: <%= @product.name%> </h1>
+<%= render partial: 'form' %>
 <br>
 <%= link_to('Back to Index', products_path)%>
