@@ -27,19 +27,30 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.create(product_params)
-    redirect_to product_url(@product), notice: 'Updated product' #to show a prod
+    @product = Product.new(product_params)
+    # @product.valid? #do I need these two?
+    # @product.persisted?
+    if @product.save
+      redirect_to product_url(@product), notice: 'Updated product' #to show a prod
+    else
+      render :new
+    end
   end
 
   def edit; end
     #find_product
 
   def update
-    @product.update_attributes(product_params)
-    redirect_to products_url
+    #find_product
+    if @product.update_attributes(product_params)
+      redirect_to products_url
+    else
+      render :edit
+    end
   end
 
   def destroy
+    #find_product
     @product.destroy
     redirect_to products_url, notice: 'Deleted product' #to products index
   end
