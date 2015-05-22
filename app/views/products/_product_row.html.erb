@@ -6,4 +6,5 @@
   <td><%= time_ago_in_words(product_row.created_at) %></td>
   <td><%= link_to('Delete', product_path(product_row), method: :delete, data: { confirm: "Do you want to delete this product?" } )%></td>
   <td><%= link_to('Edit', edit_product_path(product_row)) %></td>
+  <td><%= top_ten(product_row) %></td>
 </tr>
