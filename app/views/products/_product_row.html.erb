@@ -13,18 +13,18 @@
   <div class="lines">
   <div class="row">
     <div class="col-xs-6 col-md-1"></div><!-- to create offset of 2 columns -->
-    <div class="col-xs-6 col-md-1"></div>
-    <div class="col-xs-6 col-md-1"><%= link_to(product_row.name, product_path(product_row)) %></div>
-    <div class="col-xs-6 col-md-1"><%= number_to_currency(product_row.price) %></div>
-    <div class="col-xs-6 col-md-1"><%= image_tag(product_row.image, size: "50", alt: product_row.name) %></div>
-    <div class="col-xs-6 col-md-1">Views: <%= product_row.views %></div>
-    <div class="col-xs-6 col-md-1">Created: <%= time_ago_in_words(product_row.created_at) %></div>
-    <div class="col-xs-6 col-md-1">Updated: <%= time_ago_in_words(product_row.updated_at) %></div>
-    <div class="col-xs-6 col-md-1">
-      <%= link_to('Edit', edit_product_path(product_row)) %>,
-      <%= link_to('Delete', product_path(product_row), method: :delete, data: { confirm: "Do you want to delete this product?" } )%>
-    </div>
-    <div class="col-xs-6 col-sm-1"><%= top_ten(product_row) %></div>
-  </div> <!-- end of class: row -->
-</div>
+      <div class="col-xs-6 col-md-1"></div>
+      <div class="col-xs-6 col-md-1"><%= link_to(product_row.name, product_path(product_row)) %></div>
+      <div class="col-xs-6 col-md-1"><%= number_to_currency(product_row.price) %></div>
+      <div class="col-xs-6 col-md-1"><%= image_tag(product_row.image, size: "50", alt: product_row.name) %></div>
+      <div class="col-xs-6 col-md-1">Views: <%= product_row.views %></div>
+      <div class="col-xs-6 col-md-1">Created: <%= time_ago_in_words(product_row.created_at) %></div>
+      <div class="col-xs-6 col-md-1">Updated: <%= time_ago_in_words(product_row.updated_at) %></div>
+      <div class="col-xs-6 col-md-1">
+        <%= link_to('Edit', edit_product_path(product_row)) %>,
+        <%= link_to('Delete', product_path(product_row), method: :delete, data: { confirm: "Do you want to delete this product?" } )%>
+      </div>
+      <div class="col-xs-6 col-sm-1"><%= top_ten(product_row) %></div>
+    </div> <!-- end of class: row -->
+  </div>
 </div> <!-- end of class: container -->

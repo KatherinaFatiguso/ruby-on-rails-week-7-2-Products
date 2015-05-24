@@ -1,21 +1,6 @@
 
-<h1 class="text-center">Welcome To My Online Shop</h1>
-
+<h1 class="text-center header">KATHERINA'S ONLINE SHOP</h1>
 <h3 class="text-center">Products List</h3>
-  <!-- <div class='container'>
-    <div class='row'>
-      <div class='col-xs-3'>Name</div>
-      <div class='col-xs-3'>Price</div>
-      <div class='col-xs-3'>Image</div>
-      <div class='col-xs-3'>Views</div>
-      <div class='col-xs-3'>Created At</div>
-      <div class='col-xs-3'>Updated At</div>
-      <div class='col-xs-3'>Actions</div>
-      <div class='col-xs-3'>Top-Ten</div>
-    </div>
-  </div>  -->
-  <!-- end of class container -->
-
 <%= render partial: 'product_row', collection: @products %>
 <br>
 <p class="text-center"><%= link_to('Create a new product', new_product_path) %></p>

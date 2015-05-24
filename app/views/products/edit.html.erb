@@ -1,15 +1,31 @@
-<% if @product.errors.any? %>
-  <div id="error_explanation">
-    <ul>
-      <% @product.errors.full_messages.each do |msg|%>
-      <p><%= msg %></p>
+<h1 class="text-center header">KATHERINA'S ONLINE SHOP</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <% if @product.errors.any? %>
+        <div id="error_explanation">
+          <ul>
+            <% @product.errors.full_messages.each do |msg|%>
+            <p><%= msg %></p>
+            <% end %>
+          </ul>
+        </div>
       <% end %>
-    </ul>
-  </div>
-<% end %>
+      <h3>Editing Product: <%= @product.name%> </h3>
+      <%= render partial: 'form' %>
+      <br>
+      <%= link_to('Back to Index', products_path)%>
+    </div> <!--end of col-->
 
-<h1>Editing Product: <%= @product.name%> </h1>
-<%= render partial: 'form' %>
-<br>
-
-<%= link_to('Back to Index', products_path)%>
+    <div class="col-xs-12 col-md-6">
+      <p>Product Details:</p>
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    </div> <!--end of col-->
+  </div> <!--end of row-->
+</div> <!--end of container-->
