@@ -1,7 +1,8 @@
-# source 'https://rubygem.org'
 source 'http://rails-assets.org' do
   gem 'rails-assets-bootstrap'
 end
+
+source 'https://rubygem.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
